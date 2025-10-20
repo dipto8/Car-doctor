@@ -7,10 +7,40 @@ import img6 from "../../../../src/assets/images/banner/6.jpg";
 
 function Banner() {
   return (
-    <div className="carousel w-full h-[600px]">
+    <div className="carousel w-full h-[600px] my-20">
       <div id="slide1" className="carousel-item relative w-full ">
         <img src={img1} className="w-full rounded-xl" />
-        <div className="absolute left-0  top-0 gap-4 flex items-center h-full  bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] pl-16  ">
+        <div className=" rounded-xl  absolute left-0  top-0 gap-4 flex items-center h-full  bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] pl-8  ">
+          <div className=" space-y-5 w-1/2 mt-10 ">
+            <h1 className="text-6xl font-bold text-white">
+              Affordable Price For Car Servicing
+            </h1>
+            <p className="text-white">
+              There are many variations of passages of available, but the
+              majority have suffered alteration in some form
+            </p>
+            <div className="">
+              <button class="btn btn-outline btn-error mr-5">
+                Discover more
+              </button>
+              <button className="btn btn-outline  btn-warning">
+                Latest Projects
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="absolute left-5 right-5 bottom-5 gap-4 flex -translate-y-1/2 transform justify-end ">
+          <a href="#slide4" className="btn btn-circle">
+            ❮
+          </a>
+          <a href="#slide2" className="btn btn-circle">
+            ❯
+          </a>
+        </div>
+      </div>
+      <div id="slide2" className="carousel-item relative w-full">
+      <img src={img2} className="w-full rounded-xl" />
+        <div className=" rounded-xl  absolute left-0  top-0 gap-4 flex items-center h-full  bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] pl-8  ">
           <div className=" space-y-5 w-1/2 mt-10 ">
             <h1 className="text-6xl font-bold text-white">
               Affordable Price For Car Servicing
@@ -29,18 +59,7 @@ function Banner() {
             </div>
           </div>
         </div>
-        <div className="absolute left-5 right-5 bottom-5 gap-4 flex -translate-y-1/2 transform justify-end ">
-          <a href="#slide4" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide2" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide2" className="carousel-item relative w-full">
-        <img src={img2} className="w-full" />
-        <div className="absolute left-5 right-5 bottom-5 gap-4 flex -translate-y-1/2 transform justify-end">
+        <div className=" absolute left-5 right-5 bottom-5 gap-4 flex -translate-y-1/2 transform justify-end">
           <a href="#slide1" className="btn btn-circle">
             ❮
           </a>
@@ -50,7 +69,26 @@ function Banner() {
         </div>
       </div>
       <div id="slide3" className="carousel-item relative w-full">
-        <img src={img3} className="w-full" />
+       <img src={img3} className="w-full rounded-xl" />
+        <div className=" rounded-xl  absolute left-0  top-0 gap-4 flex items-center h-full  bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] pl-8  ">
+          <div className=" space-y-5 w-1/2 mt-10 ">
+            <h1 className="text-6xl font-bold text-white">
+              Affordable Price For Car Servicing
+            </h1>
+            <p className="text-white">
+              There are many variations of passages of available, but the
+              majority have suffered alteration in some form
+            </p>
+            <div className="">
+              <button class="btn btn-outline btn-error mr-5">
+                Discover more
+              </button>
+              <button className="btn btn-outline  btn-success">
+                Latest Projects
+              </button>
+            </div>
+          </div>
+        </div>
         <div className="absolute left-5 right-5 bottom-5 gap-4 flex -translate-y-1/2 transform justify-end">
           <a href="#slide2" className="btn btn-circle">
             ❮
@@ -61,7 +99,26 @@ function Banner() {
         </div>
       </div>
       <div id="slide4" className="carousel-item relative w-full">
-        <img src={img4} className="w-full" />
+      <img src={img4} className="w-full rounded-xl" />
+        <div className=" rounded-xl  absolute left-0  top-0 gap-4 flex items-center h-full  bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)] pl-8  ">
+          <div className=" space-y-5 w-1/2 mt-10 ">
+            <h1 className="text-6xl font-bold text-white">
+              Affordable Price For Car Servicing
+            </h1>
+            <p className="text-white">
+              There are many variations of passages of available, but the
+              majority have suffered alteration in some form
+            </p>
+            <div className="">
+              <button class="btn btn-outline btn-error mr-5">
+                Discover more
+              </button>
+              <button className="btn btn-outline  btn-success">
+                Latest Projects
+              </button>
+            </div>
+          </div>
+        </div>
         <div className="absolute left-5 right-5 bottom-5 gap-4 flex -translate-y-1/2 transform justify-end">
           <a href="#slide3" className="btn btn-circle">
             ❮
