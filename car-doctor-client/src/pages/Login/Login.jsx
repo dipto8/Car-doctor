@@ -1,13 +1,25 @@
 import { Link } from "react-router-dom";
 import logo from "../.././assets/images/login/login.svg";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 function Login() {
+  const { signInUser } = useContext(AuthContext);
+
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -45,8 +57,11 @@ function Login() {
                 />
               </fieldset>
             </form>
-            <p className="text-sm"> 
-              New to CarDoctor? <Link to='/signup' className="text-orange-500 font-bold">Sign up now!</Link>
+            <p className="text-sm">
+              New to CarDoctor?{" "}
+              <Link to="/signup" className="text-orange-500 font-bold">
+                Sign up now!
+              </Link>
             </p>
           </div>
         </div>
