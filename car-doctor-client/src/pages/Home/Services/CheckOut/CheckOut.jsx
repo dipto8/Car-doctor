@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { data, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 export default function CheckOut() {
   const service = useLoaderData();
-  const { title, _id, price } = service;
-  const {user} = useContext(AuthContext);
+  const { title, _id, price, img } = service;
+  const { user } = useContext(AuthContext);
 
   const handleCheckOut = (event) => {
     event.preventDefault();
@@ -15,14 +16,37 @@ export default function CheckOut() {
     const price = form.price.value;
     const date = form.date.value;
 
-    const order ={
-        customerName : name,
-        email,
-        price,
-        date,
-        service: _id
-    }
-    console.log(order);
+    const booking = {
+      customerName: name,
+      email,
+      price,
+      date,
+      img,
+      service_id: _id,
+      service: title,
+    };
+    console.log(booking);
+
+    fetch("http://localhost:5000/bookings", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        if (data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your Booking is Confirmed, Thank you",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
   };
   return (
     <div>
@@ -78,8 +102,8 @@ export default function CheckOut() {
               placeholder="price"
               className="input input-bordered"
               name="price"
-             disabled
-            defaultValue={"$" + price}
+              disabled
+              defaultValue={"$" + price}
             />
           </div>
         </div>
