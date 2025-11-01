@@ -5,14 +5,13 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 function Navbar() {
   const { user, logOutUser } = useContext(AuthContext);
-  const handleLogout = ()=>{
+  const handleLogout = () => {
     logOutUser()
-    .then(()=>{})
-    .catch(error=>{
-      console.log(error)
-    })
-
-  }
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const navIteams = (
     <>
       <li>
@@ -27,16 +26,23 @@ function Navbar() {
       <li>
         <Link to="/">Services</Link>
       </li>
-      
-      {user?.email ? 
-        <li>
-          <button className="bg-red-500 text-lime-400" onClick={handleLogout}>Log out</button>
-        </li>
-       : 
+
+      {user?.email ? (
+        <>
+          <li>
+            <Link to="/bookings">MyBookings</Link>
+          </li>
+          <li>
+            <button className="bg-red-500 text-lime-400" onClick={handleLogout}>
+              Log out
+            </button>
+          </li>
+        </>
+      ) : (
         <li>
           <Link to="/login">Login</Link>
         </li>
-      }
+      )}
     </>
   );
   return (
