@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function BookingRow({ booking, handleDelete }) {
-  const { _id, title, img, customerName, email, price, date, service } =
+export default function BookingRow({ booking, handleDelete, handleConfirm }) {
+  const { _id, title, img, customerName, email, price, date, service ,status} =
     booking;
 
   return (
@@ -35,7 +35,9 @@ export default function BookingRow({ booking, handleDelete }) {
       <td>{date}</td>
       <td>{price}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">details</button>
+       { 
+        status ==='confirm' ? <span className="font-bold text-purple-500">Confirmed</span> :
+        <button onClick={()=>handleConfirm(_id)} className="btn btn-ghost btn-xs">Please! Confirm</button>}
       </th>
     </tr>
   );
