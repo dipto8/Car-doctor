@@ -45,7 +45,7 @@ function Bookings() {
       .then((data) =>{
         
          console.log(data)
-         if(data > modifiedCount > 0){
+         if(data.modifiedCount > 0){
             const remaining = bookings.filter(booking=>booking._id !==id);
             const updated = bookings.find(bookings=>bookings._id ===id);
             updated.status = 'confirm';
